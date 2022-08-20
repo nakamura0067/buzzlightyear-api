@@ -15,7 +15,7 @@ import lombok.Data;
 public class BuzzEntity {
 
   @Id
-  private Integer rank;
+  private Integer ranking;
   private String title;
   private String description;
 
