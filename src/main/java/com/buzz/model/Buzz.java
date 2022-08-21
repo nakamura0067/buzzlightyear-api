@@ -9,7 +9,8 @@ import lombok.Data;
 @Builder
 public class Buzz {
 
-  private Integer ranking;
+  private Integer id;
+  private String ranking;
   private String title;
   private String description;
   private Date createdDate;

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.buzz.entity.BuzzEntity;
 
 @Repository
-public interface BuzzRepository extends JpaRepository<BuzzEntity, String> {
+public interface BuzzRepository extends JpaRepository<BuzzEntity, Integer> {
 }

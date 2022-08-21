@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.buzz.model.Buzz;
@@ -27,8 +28,8 @@ public class BuzzController {
   }
 
   @PostMapping("/buzz")
-  public void register(@RequestBody Buzz buzz) {
-    service.register(buzz);
+  public Integer register(@RequestBody Buzz buzz) {
+    return service.register(buzz);
   }
 
   @PutMapping("/buzz")
@@ -37,7 +38,12 @@ public class BuzzController {
   }
 
   @DeleteMapping("/buzz")
-  public void deleteAllById(@RequestBody List<String> rankings) {
-    service.deleteAllById(rankings);
+  public void deleteById(@RequestParam(name="id") Integer id) {
+    service.deleteById(id);
+  }
+
+  @PostMapping("/buzz/delete-all-byid")
+  public void deleteAllById(@RequestBody List<Integer> ids) {
+    service.deleteAllById(ids);
   }
 }
